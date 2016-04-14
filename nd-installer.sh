@@ -11,7 +11,7 @@ main() {
   PRINT 'installing noodoo framework...'
   [ ! -d $ROOT_DIR ] && mkdir -p $ROOT_DIR
   cd $ROOT_DIR
-  ([ ! -d $ROOT_DIR/app ] || [ ! -n "$(ls -A $ROOT_DIR/app)" ]) && git clone $ND_FRAMEWORK $ROOT_DIR/app && cd './app' && npm install
+  ([ ! -d $ROOT_DIR/app ] || [ ! -n "$(ls -A $ROOT_DIR/app)" ]) && git clone $ND_FRAMEWORK $ROOT_DIR/app && cd './app' && npm install && node tasks precompile
 
   PRINT 'installing organizers...'
   [ ! -d $ROOT_DIR/app/organizers ] && PRINT "can't find organizers folder" 1 && exit -1
